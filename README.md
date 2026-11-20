@@ -6,7 +6,7 @@
 
 <sub>A project by OpenSoftME</sub>
 
-@id39036125 (*Inspect) files. Analyze indicators. Understand the evidence.*
+
 
 </div>
 
