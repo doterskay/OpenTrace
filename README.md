@@ -14,7 +14,7 @@
 
 ## Overview
 
-OpenTrace is a C++ application designed for static analysis of Minecraft Java modifications.
+OpenTrace is a C++ application designed for static analysis of Java modifications.
 
 Its purpose is to identify potentially suspicious modifications, cheat clients, and third-party tools by examining file structures, metadata, code-related indicators, and signatures.
 
@@ -70,7 +70,7 @@ The architecture, core components, and detection approach are being designed. Mo
 
 ## О проекте
 
-OpenTrace — приложение на C++ для статического анализа модификаций Minecraft Java.
+OpenTrace — приложение на C++ для статического анализа модификаций Java.
 
 Проект предназначен для выявления потенциально подозрительных модификаций, чит-клиентов и сторонних инструментов путём изучения структуры файлов, метаданных, программных индикаторов и сигнатур.
 
