@@ -1,0 +1,20 @@
+# Build files
+build/
+cmake-build-*/
+out/
+
+# Compiled files
+*.exe
+*.o
+*.obj
+*.dll
+*.lib
+*pdb
+
+.vs/
+.vscode/
+.idea/
+
+.tmp
+.log
+
