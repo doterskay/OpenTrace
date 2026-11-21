@@ -1,45 +1,76 @@
+
 #include <iostream>
-#include <limits>
+#include <string>
+#include <cstdlib>
 
-int main() {
-    int choice = 0;
+void showMenu()
+{
+    system("cls");
+
+    std::cout << "OpenTrace\n";
+    std::cout << "Minecraft Mod Security Analyzer\n\n";
+
+    std::cout << "1. Scan computer\n";
+    std::cout << "2. About\n";
+    std::cout << "3. Exit\n\n";
+
+    std::cout << "Select option: ";
+}
+
+void showAbout()
+{
+    system("cls");
+
+    std::cout << "OpenTrace\n";
+    std::cout << "Developer: OpenSoftME\n";
 
 
-    std::cout << "         OpenTrace          \n";
+    std::cout << "Press Enter to return to menu...";
+    std::cin.get();
+}
 
-    std::cout <<"1. Scan\n";
-    std::cout <<"2. About\n";
-    std::cout <<"3. Exit\n\n";
+void startScan()
+{
+    system("cls");
 
-    while(true){
-        std::cout <<"Select an option: ";
-        
-        
-        if(!(std::cin >> choice)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize> :: max(), '\n');
+    std::cout << "Scanner module is not implemented yet.\n\n";
 
-            std::cout << "Invalid input. Enter a number.\n\n";
-            continue;
-        }
+    std::cout << "Press Enter to return to menu...";
+    std::cin.get();
+}
 
-        switch (choice)
+int main()
+{
+
+    system("cls");
+
+    while (true)
+    {
+        showMenu();
+
+        std::string choice;
+        std::getline(std::cin, choice);
+
+        if (choice == "1")
         {
-        case 1:
-            std::cout << "\nScanning is not implemented yet.\n\n";
-            break;
-
-        case 2:
-            std::cout << "\nOpenTrace - static analysis tool for mods.\n";
-             std::cout << "Developed by OpenSoftME.\n\n";
-            break;
-
-        case 3:
-            std::cout << "\nClosing OpenTrace...\n";
+            startScan();
+        }
+        else if (choice == "2")
+        {
+            showAbout();
+        }
+        else if (choice == "3")
+        {
+            system("cls");
+            std::cout << "Closing OpenTrace...\n";
             return 0;
-        
-        default:
-            break;
+        }
+        else
+        {
+            std::cout << "\nInvalid option. Press Enter...";
+            std::cin.get();
         }
     }
+
+    return 0;
 }
