@@ -1,7 +1,47 @@
-
 #include <iostream>
 #include <string>
-#include <cstdlib>
+#include <vector>
+#include <filesystem>
+#include <algorithm>
+#include <cctype>
+#include <windows.h>
+#include <zip.h>
+
+namespace fs = std::filesystem;
+
+std::vector<fs::path> foundMobs;
+
+bool isModArchive(const fs::path& file)
+{
+    int error = 0;
+    zip_t* archive =zip_open(file.string().c_str(), ZIP_RDONLY, &error);
+
+    if (!archive)
+        return false;
+
+    const char* entries[] = {
+        "fabric.mod.json",
+        "quilt.mod.json",
+        "META-INF/mods.toml",
+        "META-INF/neoforge.mods.toml"
+    };
+
+    bool result  = false;
+
+
+    for (const char* entry : entries)
+    {
+        if(zip_name_locate(archive, entry, 0) >= 0)
+        {
+            result = true;
+            break;
+        }
+    }
+
+    zip_close(archive);
+    return result;
+}
+
 
 void showMenu()
 {
